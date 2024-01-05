@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/home.css">
+    <title><%=title%></title>
+
+  </head>
+  <body>
+    
+ 
+      <% for(let i=0;i<contact_list.length;i++){ %>
+        <ul>
+      <li> <%= contact_list[i].name%></li>
+      <li> <%= contact_list[i].phone%></li>
+      <div class="delete-btn">
+        <!-- in <a> tag we access path and  of deleted and <%=i.phone%> this what i want delete -->
+      <a href="/delete-contact/?id=<%= contact_list[i].id%>" >
+        delete
+      </a>
+    </div>
+    
+  </div>
+    
+    </ul>
+      <% }%>
+      <form action="/create-contact" method="POST">
+        <input type="text" placeholder="Enter Name" name="name">
+        <input type="text" placeholder="Enter Phone" name="mobile">
+        <button type="submit">Add Contact</button>
+      </form>
+
+<script  type="text/javascript" src="/js/home.js"></script>
+  </body>
+</html>
